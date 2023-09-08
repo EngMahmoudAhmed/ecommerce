@@ -6,7 +6,7 @@ const Home = () => {
             <div className="hero">
                 <div className="card text-white border-0">
                     <img src="./assets/home2.jpg" className="card-img" alt="background" height={550}/>
-                    <div className="card-img-overlay  d-flex align-items-center justify-content-center">
+                    <div className="card-img-overlay  d-flex justify-content-center flex-column">
                         <div className="container">
                             <div>
                                 <h5 className="card-title display-3 fw-bolder mb-0">NEW SESSION ARRIVALS</h5>
