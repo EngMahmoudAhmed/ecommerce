@@ -15,7 +15,7 @@ const Product = () => {
                 setData(await response.clone().json());
                 setFilter(await response.json());
                 setLoading(false);
-                console.log(setFilter());
+                console.log(filter);
             }
             return () => {
                 componenteMonted = false;
@@ -24,8 +24,29 @@ const Product = () => {
         getProducts();
     }, []);
 
+
+    const Loading = () => {
+        return <>
+        
+        ....loading
+        </>
+    }
+
     return (
         <>
+            <div className="container my-5 py-5">
+                <div className="row">
+                    <div className="col-md-12">
+                        <h1 className='display-6 fw-bold text-center'>Latest Product</h1>
+                    </div>
+                    <hr />
+                </div>
+                <div className="row justify-content-center">
+                    {
+                        loading ? <Loading/>: <showProduct/>
+                    }
+                </div>
+            </div>
         </>
     )
 }
