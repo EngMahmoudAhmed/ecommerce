@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 const Product = () => {
 
-    const [data, setData] = useState();
+    const [data, setData] = useState([]);
     const [filter, setFilter] = useState(data);
     const [loading, setLoading] = useState(false);
     let componenteMonted = true;
@@ -30,28 +30,30 @@ const Product = () => {
     }
 
     const ShowProducts = () => {
-        return( <>
-            <div className="buttons d-flex justify-content-center py-5">                   
+        return (<>
+            <div className="buttons d-flex justify-content-center py-5">
                 <button className="btn btn-outline-dark me-2">All Products</button>
                 <button className="btn btn-outline-dark me-2">Men's Clothing</button>
                 <button className="btn btn-outline-dark me-2">Women's Clothing</button>
-                <button className="btn btn-outline-dark me-2">Jewellery</button>
+                <button className="btn btn-outline-dark  me-2">Jewellery</button>
                 <button className="btn btn-outline-dark me-2">Electronics</button>
             </div>
-            {
-                filter.map((product) => {
-                    return (<>
-                        <div class="card" style="width: 18rem;">
-                            <img src="..." class="card-img-top" alt="..."/>
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                </div>
+
+            {filter.map((product) => {
+                return (
+                    <div className="col-md-3 mb-4" key={product.id}>
+                        <div className="card h-100 text-center p-4">
+                            <img src={product.image} className="card-img-top shadow-sm" alt={product.title} height={250}/>
+                            <div className="card-body">
+                                <h5 className="card-title">{product.title.substring(0,12)}...</h5>
+                                <p className="card-text lead fw-bold">{product.price}$</p>
+                                <a href="#" className="btn btn-outline-dark">Buy Now</a>
+                            </div>
                         </div>
-                    
-                    </>)
-                })
+                    </div>
+
+                )
+            })
             }
 
         </>)
