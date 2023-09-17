@@ -26,10 +26,35 @@ const Product = () => {
 
 
     const Loading = () => {
-        return <>
-        
-        ....loading
-        </>
+        return <>....loading</>
+    }
+
+    const ShowProducts = () => {
+        return( <>
+            <div className="buttons d-flex justify-content-center py-5">                   
+                <button className="btn btn-outline-dark me-2">All Products</button>
+                <button className="btn btn-outline-dark me-2">Men's Clothing</button>
+                <button className="btn btn-outline-dark me-2">Women's Clothing</button>
+                <button className="btn btn-outline-dark me-2">Jewellery</button>
+                <button className="btn btn-outline-dark me-2">Electronics</button>
+            </div>
+            {
+                filter.map((product) => {
+                    return (<>
+                        <div class="card" style="width: 18rem;">
+                            <img src="..." class="card-img-top" alt="..."/>
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                        </div>
+                    
+                    </>)
+                })
+            }
+
+        </>)
     }
 
     return (
@@ -43,7 +68,7 @@ const Product = () => {
                 </div>
                 <div className="row justify-content-center">
                     {
-                        loading ? <Loading/>: <showProduct/>
+                        loading ? <Loading /> : <ShowProducts />
                     }
                 </div>
             </div>
