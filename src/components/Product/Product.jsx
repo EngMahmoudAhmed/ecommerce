@@ -30,7 +30,7 @@ const Product = () => {
         return <>
 
             <div className="col-md-3">
-                <Skeleton height={350} />
+                <Skeleton height={350} width={200}/>
             </div>
             <div className="col-md-3">
                 <Skeleton height={350} />
@@ -56,11 +56,11 @@ const Product = () => {
                 <button className="btn btn-outline-dark me-2" onClick={() => {
                     setFilter(data)
                 }}>All Products</button>
+                <button className="btn btn-outline-dark me-2" onClick={() => 
+                    filterProduct("men's clothing")
+                }>Men's Clothing</button>
                 <button className="btn btn-outline-dark me-2" onClick={() => {
-                    filterProduct(`men's Clothing`)
-                }}>Men's Clothing</button>
-                <button className="btn btn-outline-dark me-2" onClick={() => {
-                    filterProduct(`women's Clothing`)
+                    filterProduct(`women's clothing`)
                 }}>Women's Clothing</button>
                 <button className="btn btn-outline-dark  me-2" onClick={() => {
                     filterProduct(`jewelery`)
@@ -77,7 +77,7 @@ const Product = () => {
                             <img src={product.image} className="card-img-top shadow-sm" alt={product.title} height={250} />
                             <div className="card-body">
                                 <h5 className="card-title">{product.title.substring(0, 12)}...</h5>
-                                <p className="card-text lead fw-bold">{product.price}$</p>
+                                <p className="card-text lead fw-bold">{product.price} $</p>
                                 <a href="#" className="btn btn-outline-dark">Buy Now</a>
                             </div>
                         </div>
