@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import Skeleton from 'react-loading-skeleton';
 
 const Product = () => {
 
@@ -26,26 +27,56 @@ const Product = () => {
 
 
     const Loading = () => {
-        return <>....loading</>
+        return <>
+
+            <div className="col-md-3">
+                <Skeleton height={350} />
+            </div>
+            <div className="col-md-3">
+                <Skeleton height={350} />
+            </div>
+            <div className="col-md-3">
+                <Skeleton height={350} />
+            </div>
+            <div className="col-md-3">
+                <Skeleton height={350} />
+            </div>
+            
+        </>
+    }
+
+    const filterProduct = (cat) => {
+        const updatedList = data.filter((x) => x.catgory === cat)
+        setFilter(updatedList)
     }
 
     const ShowProducts = () => {
         return (<>
             <div className="buttons d-flex justify-content-center py-5">
-                <button className="btn btn-outline-dark me-2">All Products</button>
-                <button className="btn btn-outline-dark me-2">Men's Clothing</button>
-                <button className="btn btn-outline-dark me-2">Women's Clothing</button>
-                <button className="btn btn-outline-dark  me-2">Jewellery</button>
-                <button className="btn btn-outline-dark me-2">Electronics</button>
+                <button className="btn btn-outline-dark me-2" onClick={() => {
+                    setFilter(data)
+                }}>All Products</button>
+                <button className="btn btn-outline-dark me-2" onClick={() => {
+                    filterProduct(`men's Clothing`)
+                }}>Men's Clothing</button>
+                <button className="btn btn-outline-dark me-2" onClick={() => {
+                    filterProduct(`women's Clothing`)
+                }}>Women's Clothing</button>
+                <button className="btn btn-outline-dark  me-2" onClick={() => {
+                    filterProduct(`jewelery`)
+                }}>Jewellery</button>
+                <button className="btn btn-outline-dark me-2" onClick={() => {
+                    filterProduct(`electronics`)
+                }}>Electronics</button>
             </div>
 
             {filter.map((product) => {
                 return (
                     <div className="col-md-3 mb-4" key={product.id}>
                         <div className="card h-100 text-center p-4">
-                            <img src={product.image} className="card-img-top shadow-sm" alt={product.title} height={250}/>
+                            <img src={product.image} className="card-img-top shadow-sm" alt={product.title} height={250} />
                             <div className="card-body">
-                                <h5 className="card-title">{product.title.substring(0,12)}...</h5>
+                                <h5 className="card-title">{product.title.substring(0, 12)}...</h5>
                                 <p className="card-text lead fw-bold">{product.price}$</p>
                                 <a href="#" className="btn btn-outline-dark">Buy Now</a>
                             </div>
