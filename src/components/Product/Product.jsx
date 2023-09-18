@@ -6,6 +6,7 @@ const Product = () => {
     const [data, setData] = useState([]);
     const [filter, setFilter] = useState(data);
     const [loading, setLoading] = useState(false);
+    const [filterproduct, setfilterProduct] = useState([]);
     let componenteMonted = true;
 
     useEffect(() => {
@@ -30,7 +31,7 @@ const Product = () => {
         return <>
 
             <div className="col-md-3">
-                <Skeleton height={350} width={200}/>
+                <Skeleton height={350} width={200} />
             </div>
             <div className="col-md-3">
                 <Skeleton height={350} />
@@ -41,13 +42,14 @@ const Product = () => {
             <div className="col-md-3">
                 <Skeleton height={350} />
             </div>
-            
+
         </>
     }
 
     const filterProduct = (cat) => {
-        const updatedList = data.filter((x) => x.catgory === cat)
+        const updatedList = data.filter((x) => x.category === cat)
         setFilter(updatedList)
+        console.log(cat);
     }
 
     const ShowProducts = () => {
@@ -56,27 +58,27 @@ const Product = () => {
                 <button className="btn btn-outline-dark me-2" onClick={() => {
                     setFilter(data)
                 }}>All Products</button>
-                <button className="btn btn-outline-dark me-2" onClick={() => 
-                    filterProduct("men's clothing")
-                }>Men's Clothing</button>
                 <button className="btn btn-outline-dark me-2" onClick={() => {
-                    filterProduct(`women's clothing`)
+                    filterProduct("men's clothing")
+                }}>Men's Clothing</button>
+                <button className="btn btn-outline-dark me-2" onClick={() => {
+                    filterProduct("women's clothing")
                 }}>Women's Clothing</button>
                 <button className="btn btn-outline-dark  me-2" onClick={() => {
-                    filterProduct(`jewelery`)
+                    filterProduct("jewelery")
                 }}>Jewellery</button>
                 <button className="btn btn-outline-dark me-2" onClick={() => {
-                    filterProduct(`electronics`)
+                    filterProduct("electronics")
                 }}>Electronics</button>
             </div>
 
             {filter.map((product) => {
                 return (
-                    <div className="col-md-3 mb-4" key={product.id}>
+                    <div className="col-sm-4 col-md-3 mb-4" key={product.id}>
                         <div className="card h-100 text-center p-4">
                             <img src={product.image} className="card-img-top shadow-sm" alt={product.title} height={250} />
                             <div className="card-body">
-                                <h5 className="card-title">{product.title.substring(0, 12)}...</h5>
+                                <h5 className="card-title">{product.title.substring(0,12)}...</h5>
                                 <p className="card-text lead fw-bold">{product.price} $</p>
                                 <a href="#" className="btn btn-outline-dark">Buy Now</a>
                             </div>
