@@ -29,16 +29,16 @@ const Product = () => {
     const Loading = () => {
         return <>
 
-            <div className="col-md-3">
-                <Skeleton height={350} width={200} />
-            </div>
-            <div className="col-md-3">
+            <div className="col-sm-12 col-md-3">
                 <Skeleton height={350} />
             </div>
-            <div className="col-md-3">
+            <div className="col-sm-12 col-md-3">
                 <Skeleton height={350} />
             </div>
-            <div className="col-md-3">
+            <div className="col-sm-12 col-md-3">
+                <Skeleton height={350} />
+            </div>
+            <div className="col-sm-12 col-md-3">
                 <Skeleton height={350} />
             </div>
 
@@ -53,7 +53,7 @@ const Product = () => {
 
     const ShowProducts = () => {
         return (<>
-            <div className="buttons d-flex justify-content-center py-5">
+            <div className="buttons col-sm-12 d-flex justify-content-center py-5">
                 <button className="btn btn-outline-dark me-2" onClick={() => {
                     setFilter(data)
                 }}>All Products</button>
@@ -63,7 +63,7 @@ const Product = () => {
                 <button className="btn btn-outline-dark me-2" onClick={() => {
                     filterProduct("women's clothing")
                 }}>Women's Clothing</button>
-                <button className="btn btn-outline-dark  me-2" onClick={() => {
+                <button className="btn btn-outline-dark me-2" onClick={() => {
                     filterProduct("jewelery")
                 }}>Jewellery</button>
                 <button className="btn btn-outline-dark me-2" onClick={() => {
