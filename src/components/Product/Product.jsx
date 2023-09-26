@@ -75,7 +75,7 @@ const Product = () => {
 
             {filter.map((product) => {
                 return (
-                    <div className="col-sm-4 col-md-3 mb-4" key={product.id}>
+                    <div className="col-sm-6 col-md-4 mb-4" key={product.id}>
                         <div className="card h-100 text-center p-4">
                             <img src={product.image} className="card-img-top shadow-sm" alt={product.title} height={250} />
                             <div className="card-body">
