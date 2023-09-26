@@ -53,22 +53,24 @@ const Product = () => {
 
     const ShowProducts = () => {
         return (<>
-            <div className="buttons col-sm-12 d-flex justify-content-center py-5">
-                <button className="btn btn-outline-dark me-2" onClick={() => {
-                    setFilter(data)
-                }}>All Products</button>
-                <button className="btn btn-outline-dark me-2" onClick={() => {
-                    filterProduct("men's clothing")
-                }}>Men's Clothing</button>
-                <button className="btn btn-outline-dark me-2" onClick={() => {
-                    filterProduct("women's clothing")
-                }}>Women's Clothing</button>
-                <button className="btn btn-outline-dark me-2" onClick={() => {
-                    filterProduct("jewelery")
-                }}>Jewellery</button>
-                <button className="btn btn-outline-dark me-2" onClick={() => {
-                    filterProduct("electronics")
-                }}>Electronics</button>
+            <div className="container buttons d-flex justify-content-center align-items-center py-5">
+                <div className="row d-flex justify-content-center">
+                    <button className="col-sm-8 my-1 col-md-2 btn btn-outline-dark me-2" onClick={() => {
+                        setFilter(data)
+                    }}>All Products</button>
+                    <button className="col-sm-8 my-1 col-md-2 btn btn-outline-dark me-2" onClick={() => {
+                        filterProduct("men's clothing")
+                    }}>Men's Clothing</button>
+                    <button className="col-sm-8 my-1 col-md-2 btn btn-outline-dark me-2" onClick={() => {
+                        filterProduct("women's clothing")
+                    }}>Women's Clothing</button>
+                    <button className="col-sm-8 my-1 col-md-2 btn btn-outline-dark me-2" onClick={() => {
+                        filterProduct("jewelery")
+                    }}>Jewellery</button>
+                    <button className="col-sm-8 my-1 col-md-2 btn btn-outline-dark me-2" onClick={() => {
+                        filterProduct("electronics")
+                    }}>Electronics</button>
+                </div>
             </div>
 
             {filter.map((product) => {
