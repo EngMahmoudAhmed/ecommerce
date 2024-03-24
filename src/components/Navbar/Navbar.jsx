@@ -1,6 +1,7 @@
+// eslint-disable-next-line no-unused-vars
 import React from 'react'
 
-const Navbar = () => {
+function Navbar() {
     return (
         <>
             <nav className="navbar navbar-expand-lg bg-light navbar-light py-3 shadow-sm">
@@ -27,10 +28,10 @@ const Navbar = () => {
                         <div className="buttons">
                             <a href="#" className="btn btn-outline-dark m-2">
                                 <i className="fa-solid fa-arrow-right-to-bracket me-1"></i>Login</a>
-                            
+
                             <a href="#" className="btn btn-outline-dark m-2">
                                 <i className="fa-solid fa-user-plus me-1"></i>Register</a>
-                            
+
                             <a href="#" className="btn btn-outline-dark m-2">
                                 <i className="fa-solid fa-shopping-cart me-1"></i>Cart (0)</a>
                         </div>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Skeleton from 'react-loading-skeleton';
 
 const Product = () => {
@@ -19,6 +19,7 @@ const Product = () => {
                 console.log(filter);
             }
             return () => {
+                // eslint-disable-next-line react-hooks/exhaustive-deps
                 componenteMonted = false;
             }
         }
@@ -60,10 +61,10 @@ const Product = () => {
                     }}>All Products</button>
                     <button className="col-sm-8 my-1 col-md-2 btn btn-outline-dark me-2" onClick={() => {
                         filterProduct("men's clothing")
-                    }}>Men's Clothing</button>
+                    }}>Men&apos;s Clothing</button>
                     <button className="col-sm-8 my-1 col-md-2 btn btn-outline-dark me-2" onClick={() => {
                         filterProduct("women's clothing")
-                    }}>Women's Clothing</button>
+                    }}>Women&apos;s Clothing</button>
                     <button className="col-sm-8 my-1 col-md-2 btn btn-outline-dark me-2" onClick={() => {
                         filterProduct("jewelery")
                     }}>Jewellery</button>
